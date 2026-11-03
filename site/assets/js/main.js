@@ -88,7 +88,12 @@
       if (!body.classList.contains("is-menu-open")) header.classList.toggle("is-hidden", past && y > last + 2 && y > 600);
       if (y < last - 2) header.classList.remove("is-hidden");
       last = y;
+      body.classList.toggle("is-scrolled", y > (hero ? hero.offsetHeight * 0.55 : 320));
     });
+    const consult = $("#consult");
+    if (consult && "IntersectionObserver" in window) {
+      new IntersectionObserver((es) => es.forEach((e) => body.classList.toggle("is-at-consult", e.isIntersecting)), { rootMargin: "-20% 0px -20% 0px" }).observe(consult);
+    }
     $$("[data-reduce]").forEach((b) => {
       const sync = () => b.setAttribute("aria-pressed", String(doc.classList.contains("reduce-motion")));
       sync();
@@ -178,7 +183,7 @@
   const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   function officeState(now) {
     const h = now.getUTCHours() + now.getUTCMinutes() / 60;
-    if (isWeekday(now) && h >= OPEN_H && h < CLOSE_H) return { open: true, label: "Open now", when: "until 5 pm today", short: "Until 5 pm today" };
+    if (isWeekday(now) && h >= OPEN_H && h < CLOSE_H) return { open: true, label: "Open now", when: "until 5 pm today", short: "Until 5 pm" };
     let d = new Date(now.getTime());
     if (!(isWeekday(now) && h < OPEN_H)) { do { d = new Date(d.getTime() + 864e5); } while (!isWeekday(d)); }
     const sameDay = d.getUTCDate() === now.getUTCDate() && d.getUTCMonth() === now.getUTCMonth();
