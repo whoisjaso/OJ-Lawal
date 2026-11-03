@@ -646,3 +646,7 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   .footer__cols--3 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 400px) { .footer__cols--3 { grid-template-columns: 1fr; } }
+
+/* Every word capitalized, site-wide. Typed input stays as typed. */
+body { text-transform: capitalize; }
+input, textarea, select, .footer__legal a[href^="mailto"] { text-transform: none; }

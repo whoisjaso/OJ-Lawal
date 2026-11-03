@@ -183,13 +183,13 @@
   const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   function officeState(now) {
     const h = now.getUTCHours() + now.getUTCMinutes() / 60;
-    if (isWeekday(now) && h >= OPEN_H && h < CLOSE_H) return { open: true, label: "Open now", when: "until 5 pm today", short: "Until 5 pm" };
+    if (isWeekday(now) && h >= OPEN_H && h < CLOSE_H) return { open: true, label: "Open now", when: "until 5 PM today", short: "Until 5 PM" };
     let d = new Date(now.getTime());
     if (!(isWeekday(now) && h < OPEN_H)) { do { d = new Date(d.getTime() + 864e5); } while (!isWeekday(d)); }
     const sameDay = d.getUTCDate() === now.getUTCDate() && d.getUTCMonth() === now.getUTCMonth();
     const tomorrow = new Date(now.getTime() + 864e5).getUTCDate() === d.getUTCDate() && new Date(now.getTime() + 864e5).getUTCMonth() === d.getUTCMonth();
     const day = sameDay ? "today" : tomorrow ? "tomorrow" : DAYS[d.getUTCDay()];
-    return { open: false, label: "Office closed", when: `opens ${day} at 9 am`, short: `Opens ${day}, 9 am` };
+    return { open: false, label: "Office closed", when: `opens ${day} at 9 AM`, short: `Opens ${day}, 9 AM` };
   }
   function initClock() {
     $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
