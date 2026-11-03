@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Contact and Request a Consultation | Law Firm of O. J. Lawal & Associates</title>
-<meta name="description" content="Call (713) 773-0600 or prepare your consultation online. 11711 Bedford Street, Unit 1, Houston, TX 77031. Monday to Friday, 9 am to 5 pm.">
+<title>Book a Consultation | Law Firm of O. J. Lawal & Associates</title>
+<meta name="description" content="Call (713) 773-0600 or request a call back. 11711 Bedford Street, Unit 1, Houston, TX 77031. Monday to Friday, 9 am to 5 pm.">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://ojlawal.law/contact.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Law Firm of O. J. Lawal &amp; Associates">
-<meta property="og:title" content="Contact and Request a Consultation | Law Firm of O. J. Lawal & Associates">
-<meta property="og:description" content="Call (713) 773-0600 or prepare your consultation online. 11711 Bedford Street, Unit 1, Houston, TX 77031. Monday to Friday, 9 am to 5 pm.">
+<meta property="og:title" content="Book a Consultation | Law Firm of O. J. Lawal & Associates">
+<meta property="og:description" content="Call (713) 773-0600 or request a call back. 11711 Bedford Street, Unit 1, Houston, TX 77031. Monday to Friday, 9 am to 5 pm.">
 <meta property="og:image" content="https://ojlawal.law/assets/img/slots/band-books-1280.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -75,150 +75,89 @@
 <a class="fab" href="contact.html#consult" aria-label="Book a consultation"><i class="ph ph-calendar-check" aria-hidden="true"></i><span>Book a consultation</span><em data-open data-short><span data-open-when>Mon to Fri, 9 am to 5 pm</span></em></a>
 
 <main id="main">
-<section class="phero" aria-label="Contact">
+<section class="phero phero--short" aria-label="Contact">
   <div class="slide__media"><img src="assets/img/slots/band-books-2400.webp" srcset="assets/img/slots/band-books-1280.webp 1280w, assets/img/slots/band-books-2400.webp 2400w" sizes="100vw" alt="Leather-bound law books on a dark shelf" fetchpriority="high" class="op-books"></div>
   <div class="slide__copy">
-    <h1 class="title-xl">Contact</h1>
-    <p class="text">(713) 773-0600, Monday to Friday, 9 am to 5 pm, Houston time.</p>
-    <a class="pill pill--white" href="tel:+17137730600">Call the office</a>
-    <p class="slide__live" data-open><i class="ph ph-clock" aria-hidden="true"></i><span><span data-open-label>Office hours</span>, <span data-open-when>Monday to Friday, 9 am to 5 pm</span></span></p>
+    <h1 class="title-xl">Book a consultation</h1>
+    <p class="text">Two steps. Under a minute.</p>
   </div>
 </section>
 
 <section class="section" id="consult" aria-labelledby="consult-title">
-  <div class="wrap">
-    <div class="plan">
-      <div class="plan__pick">
-        <h2 class="title-lg" id="consult-title" style="margin-bottom:18px">Prepare your call</h2>
-        <p class="text text-soft" style="margin-bottom:40px">Three choices, and we tell you what to have ready so the first conversation goes further.</p>
-        <form data-planner onsubmit="return false">
-          <fieldset class="plan__q"><legend class="label">What is the matter about</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="matter" value="immigration" checked><span>Immigration</span></label>
-              <label class="chip"><input type="radio" name="matter" value="family"><span>Family</span></label>
-              <label class="chip"><input type="radio" name="matter" value="criminal"><span>Criminal charge</span></label>
-              <label class="chip"><input type="radio" name="matter" value="business"><span>Business</span></label>
-              <label class="chip"><input type="radio" name="matter" value="estate"><span>Will or probate</span></label>
-              <label class="chip"><input type="radio" name="matter" value="injury"><span>Injury</span></label>
-              <label class="chip"><input type="radio" name="matter" value="tax"><span>Tax</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="plan__q"><legend class="label">How urgent is it</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="urgency" value="deadline"><span>There is a deadline or court date</span></label>
-              <label class="chip"><input type="radio" name="urgency" value="soon" checked><span>I need to act soon</span></label>
-              <label class="chip"><input type="radio" name="urgency" value="planning"><span>I am planning ahead</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="plan__q"><legend class="label">Language</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="lang" value="english" checked><span>English is fine</span></label>
-              <label class="chip"><input type="radio" name="lang" value="other"><span>I may bring an interpreter</span></label>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-      <aside class="plancard" data-plancard aria-live="polite" aria-label="What to have ready">
-        <div class="plancard__body">
-          <p class="plancard__date" data-p-date>Immigration</p>
-          <p class="plancard__time" data-p-time>What to have ready for your first conversation</p>
-          <ul data-p-notes><li><i class="ph ph-folder-simple" aria-hidden="true"></i><span>Any letter or notice you received, with its envelope.</span></li></ul>
+  <div class="wrap wrap--narrow">
+    <form class="book" data-book novalidate>
+      <fieldset class="book__step">
+        <legend class="book__q"><span class="book__n">1</span>What is it about?</legend>
+        <div class="chips chips--big">
+          <label class="chip"><input type="radio" name="matter" value="immigration" checked><span>Immigration</span></label>
+          <label class="chip"><input type="radio" name="matter" value="family"><span>Divorce or custody</span></label>
+          <label class="chip"><input type="radio" name="matter" value="criminal"><span>A criminal charge</span></label>
+          <label class="chip"><input type="radio" name="matter" value="business"><span>My business</span></label>
+          <label class="chip"><input type="radio" name="matter" value="estate"><span>A will or probate</span></label>
+          <label class="chip"><input type="radio" name="matter" value="injury"><span>An injury</span></label>
+          <label class="chip"><input type="radio" name="matter" value="tax"><span>A tax letter</span></label>
+          <label class="chip"><input type="radio" name="matter" value="other"><span>Not sure</span></label>
         </div>
-        <div class="plancard__actions">
-          <a class="pill pill--solid" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Call (713) 773-0600</a>
-          <a class="pill" href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">Get directions</a>
-          <a class="pill" data-p-mail href="#">Copy this summary</a>
-        </div>
-      </aside>
-      <div class="plan__more">
-        <h2 class="title-lg" style="margin:0 0 18px">Or send your details</h2>
-        <p class="text text-soft" style="margin-bottom:32px">We call you back during office hours. Please do not include confidential details here until we have spoken.</p>
-        <form class="form" data-intake novalidate>
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"><span class="field__err">Please enter your name.</span></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"><span class="field__err">Please enter a phone number.</span></div>
-          <div class="field"><label for="f-matter">Matter</label><select id="f-matter" name="matter"><option>Immigration</option><option>Family law</option><option>Criminal defense</option><option>Business law</option><option>Probate or estate planning</option><option>Personal injury</option><option>Tax</option><option>Not sure</option></select></div>
-          <div class="field"><label for="f-time">Best time to call</label><input id="f-time" name="time" placeholder="Weekday mornings"></div>
-          <div class="field field--full"><label for="f-msg">A sentence or two about what you need</label><textarea id="f-msg" name="message"></textarea></div>
-          <div class="field--full"><button class="pill pill--solid" type="submit">Request a call back</button></div>
-        </form>
-        <div class="plancard" data-intake-done hidden style="position:relative;top:0;margin-top:24px">
-          <p class="plancard__date">Your request is ready</p>
-          <p class="plancard__time">It has been copied to your clipboard. Text it to the office, or have it in front of you when you call.</p>
-          <p class="plancard__summary" data-intake-text></p>
-          <div class="plancard__actions"><a class="pill pill--solid" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Call (713) 773-0600</a></div>
-        </div>
+        <p class="book__tip" data-tip><i class="ph ph-folder-simple" aria-hidden="true"></i><span>Bring any letter or notice you received, with the envelope.</span></p>
+      </fieldset>
 
-        <div class="faq" id="faq" style="margin-top:72px">
-          <h2 class="title-lg" style="margin-bottom:24px">Questions before you call</h2>
-          <details><summary>Where is the office?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>11711 Bedford Street, Unit 1, Houston, Texas 77031, in southwest Houston. Office hours are Monday to Friday, 9 am to 5 pm.</p></details>
-          <details><summary>What should I bring to a first meeting?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Any letter or notice you have received, with every page and the envelope. Identification. Any papers already filed in your matter. Use the "prepare your call" list above for your type of case.</p></details>
-          <details><summary>Can I bring someone to translate?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Yes. Bring a family member or an interpreter you trust. We take the time needed to make sure you understand each step.</p></details>
-          <details><summary>How do I know the firm is legitimate?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Look up the attorney on the <a href="https://www.texasbar.com/" target="_blank" rel="noopener">State Bar of Texas website</a>. Every licensed Texas lawyer appears there with their license status. Ask any lawyer for their bar number and check it.</p></details>
-          <details><summary>Is my information confidential?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>What you tell an attorney in a consultation is protected. Please keep sensitive details out of the website form until we have spoken and confirmed representation in writing.</p></details>
+      <fieldset class="book__step">
+        <legend class="book__q"><span class="book__n">2</span>How do we reach you?</legend>
+        <div class="form form--two">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" required autocomplete="name"><span class="field__err">Please enter your name.</span></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel"><span class="field__err">Please enter a phone number.</span></div>
         </div>
-      </div>
+        <div class="book__actions">
+          <button class="pill pill--solid pill--lg" type="submit"><i class="ph ph-calendar-check" aria-hidden="true"></i>Request a call back</button>
+          <a class="pill pill--lg" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Or call (713) 773-0600</a>
+        </div>
+        <p class="book__fine">We call back during office hours, Monday to Friday, 9 am to 5 pm. Keep private details for the call.</p>
+      </fieldset>
+    </form>
+
+    <div class="book__done plancard" data-book-done hidden>
+      <p class="plancard__date">Ready</p>
+      <p class="plancard__time" data-done-text>Your request is copied. Tap to call and we take it from there.</p>
+      <div class="plancard__actions"><a class="pill pill--solid pill--lg" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Call (713) 773-0600</a></div>
     </div>
   </div>
 </section>
 
 <section class="section section--paper" aria-labelledby="office-title">
-  <div class="wrap">
-    <div class="feature feature--flip">
-      <figure class="map reveal"><iframe title="Map to 11711 Bedford Street, Houston" src="https://www.google.com/maps?q=11711+Bedford+St+Unit+1+Houston+TX+77031&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></figure>
-      <div class="feature__copy">
-        <h2 class="title-lg" id="office-title">The office</h2>
-        <address class="text">11711 Bedford Street, Unit 1<br>Houston, Texas 77031</address>
-        <ul class="contacts">
-          <li><a href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>(713) 773-0600</a></li>
-          <li><span style="display:inline-flex;align-items:center;gap:12px"><i class="ph ph-printer" aria-hidden="true" style="color:var(--taupe);font-size:18px"></i>Fax (713) 773-0699</span></li>
-          <li><span style="display:inline-flex;align-items:center;gap:12px"><i class="ph ph-clock" aria-hidden="true" style="color:var(--taupe);font-size:18px"></i>Monday to Friday, 9 am to 5 pm</span></li>
-        </ul>
-        <div class="pills"><a class="pill pill--solid" href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">Get directions</a></div>
-      </div>
-    </div>
+  <div class="wrap wrap--narrow">
+    <h2 class="title-lg" id="office-title">The office</h2>
+    <address class="text">11711 Bedford Street, Unit 1<br>Houston, Texas 77031</address>
+    <p class="text text-soft">Monday to Friday, 9 am to 5 pm</p>
+    <div class="pills" style="margin-top:20px"><a class="pill" href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">Directions</a></div>
   </div>
 </section>
 </main>
 
 <footer class="footer">
   <div class="wrap wrap--wide">
-    <div class="footer__cols">
-      <div>
-        <h2>Practice</h2>
-        <ul>
-          <li><a href="immigration.html">Immigration</a></li>
-          <li><a href="practice.html#family">Family law</a></li>
-          <li><a href="practice.html#criminal">Criminal defense</a></li>
-          <li><a href="practice.html#business">Business law</a></li>
-          <li><a href="practice.html#estate">Probate and estate planning</a></li>
-          <li><a href="practice.html#injury">Personal injury</a></li>
-          <li><a href="practice.html#tax">Tax matters</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>The firm</h2>
-        <ul>
-          <li><a href="attorney.html">The attorney</a></li>
-          <li><a href="index.html#concerns">What clients bring us</a></li>
-          <li><a href="contact.html#consult">Request a consultation</a></li>
-          <li><a href="contact.html#faq">Questions before you call</a></li>
-        </ul>
-      </div>
+    <div class="footer__cols footer__cols--3">
       <div>
         <h2>Office</h2>
         <ul>
           <li><a href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">11711 Bedford Street, Unit 1<br>Houston, TX 77031</a></li>
-          <li><a href="tel:+17137730600">Tel. (713) 773-0600</a></li>
-          <li>Fax (713) 773-0699</li>
+          <li><a href="tel:+17137730600">(713) 773-0600</a></li>
           <li>Monday to Friday, 9 am to 5 pm</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="immigration.html">Immigration</a></li>
+          <li><a href="practice.html">Practice areas</a></li>
+          <li><a href="attorney.html">The attorney</a></li>
+          <li><a href="contact.html#consult">Book a consultation</a></li>
         </ul>
       </div>
       <div>
         <h2>Verify</h2>
         <ul>
           <li><a href="https://www.texasbar.com/AM/Template.cfm?Section=Find_A_Lawyer&template=/Customsource/MemberDirectory/MemberDirectoryDetail.cfm&ContactID=197969" target="_blank" rel="noopener">State Bar of Texas listing</a></li>
-          <li><a href="https://www.uscis.gov/scams-fraud-and-misconduct/avoid-scams" target="_blank" rel="noopener">USCIS: avoid immigration scams</a></li>
-          <li><a href="https://www.texasbar.com/" target="_blank" rel="noopener">Look up any Texas lawyer</a></li>
+          <li><a href="https://www.uscis.gov/scams-fraud-and-misconduct/avoid-scams" target="_blank" rel="noopener">USCIS: avoid scams</a></li>
         </ul>
       </div>
     </div>
@@ -229,7 +168,7 @@
         <button class="toggle" type="button" data-reduce aria-pressed="false">Reduce motion <span class="toggle__track" aria-hidden="true"></span></button>
       </div>
     </div>
-    <p class="footer__fine">Nothing on this website is legal advice, and reading it does not make you a client of the firm. Every matter is different. Prior results do not guarantee a similar outcome. Not certified by the Texas Board of Legal Specialization. Please do not send confidential information until an attorney-client relationship has been confirmed in writing.</p>
+    <p class="footer__fine">This website is not legal advice and does not make you a client. Not certified by the Texas Board of Legal Specialization. Please keep confidential details for the consultation.</p>
   </div>
 </footer>
 </body>

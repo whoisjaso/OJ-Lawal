@@ -206,64 +206,43 @@
     tick(); setInterval(tick, 30000);
   }
 
-  /* ---------------------------------------------------------------- Prepare your call */
-  function initPlanner() {
-    const form = $("[data-planner]"), card = $("[data-plancard]");
-    if (!form || !card) return;
-    const MATTERS = {
-      immigration: { name: "Immigration", bring: ["Any letter or notice you received, with its envelope", "Passport, visa, I-94 and any prior USCIS receipts or approvals", "Dates you entered and left the United States", "Marriage, birth or divorce records that connect you to a petitioner"], note: "If you have a hearing or response date, say it first. Deadlines shape everything else." },
-      family: { name: "Family law", bring: ["Marriage certificate and the date you separated", "Children's names and birth dates", "Any court papers or orders already issued", "A list of property, debts and accounts as best you know them"], note: "If anyone's safety is at risk, say so at the start of the call." },
-      criminal: { name: "Criminal defense", bring: ["The charge, the court and the next court date", "Bond papers and any paperwork from the arrest", "Names of any witnesses", "Your immigration status, because a plea can affect it"], note: "Do not discuss the facts with anyone but your lawyer. Not police, not friends, not online." },
-      business: { name: "Business law", bring: ["The contract, lease or formation papers in question", "Who the other parties are", "What you want the outcome to be", "Any deadlines in the documents"], note: "Bring the full document, not a screenshot of one page." },
-      estate: { name: "Probate and estate planning", bring: ["The will, if there is one, and the date of death if someone has passed", "A list of assets, accounts and property", "Names of heirs, children and anyone who may contest", "Any existing power of attorney or trust papers"], note: "Probate has filing windows. Earlier is easier." },
-      injury: { name: "Personal injury", bring: ["Date, place and how the injury happened", "Police or incident report number", "Photos, medical records and bills so far", "Any letter from an insurance company"], note: "Do not sign anything from an insurer before you have spoken with a lawyer." },
-      tax: { name: "Tax matters", bring: ["The IRS or state notice, every page", "The tax years involved", "Returns filed for those years", "Any payment plan or prior correspondence"], note: "IRS letters carry response dates. Note the date on the first page." },
-    };
-    const render = () => {
-      const fd = new FormData(form);
-      const m = MATTERS[fd.get("matter")] || MATTERS.immigration;
-      const urgency = fd.get("urgency"), lang = fd.get("lang");
-      const notes = [["folder-simple", `Bring: ${m.bring.join("; ")}.`], ["info", m.note]];
-      if (urgency === "deadline") notes.unshift(["warning-circle", "You have a date on paper. Call rather than write, and say the date in your first sentence."]);
-      if (urgency === "soon") notes.push(["clock", "Call during office hours and ask for the earliest available consultation."]);
-      if (urgency === "planning") notes.push(["calendar-blank", "Planning ahead is the strongest position to be in. A consultation now sets the timeline."]);
-      if (lang === "other") notes.push(["translate", "You are welcome to bring a family member or interpreter. We take the time to make sure you understand every step."]);
-      notes.push(["map-pin", `${FIRM.address}. Office hours Monday to Friday, 9 am to 5 pm.`]);
-      const summary = `Matter: ${m.name}\nTiming: ${{ deadline: "I have a deadline or court date", soon: "I need to act soon", planning: "I am planning ahead" }[urgency] || ""}\n${lang === "other" ? "I may bring an interpreter.\n" : ""}Name:\nPhone:\nBest time to call:`;
-      card.classList.add("is-updating");
-      setTimeout(() => {
-        $("[data-p-date]", card).textContent = m.name;
-        $("[data-p-time]", card).textContent = "What to have ready for your first conversation";
-        $("[data-p-notes]", card).innerHTML = notes.map(([k, t]) => `<li><i class="ph ph-${k}" aria-hidden="true"></i><span>${t}</span></li>`).join("");
-        card._summary = summary;
-        const mail = $("[data-p-mail]", card);
-        if (mail) {
-          if (FIRM.email) { mail.href = `mailto:${FIRM.email}?subject=${encodeURIComponent(`Consultation request: ${m.name}`)}&body=${encodeURIComponent(summary)}`; mail.textContent = "Email this summary"; }
-          else { mail.href = "#"; mail.textContent = "Copy this summary"; mail.onclick = (e) => { e.preventDefault(); navigator.clipboard && navigator.clipboard.writeText(summary).then(() => toast("Summary copied. Paste it into a text or have it ready when you call.", "clipboard-text")); }; }
-        }
-        card.classList.remove("is-updating");
-      }, reduce() ? 0 : 180);
-    };
-    form.addEventListener("change", render);
-    render();
+  /* ---------------------------------------------------------------- Book a consultation: two steps */
+  const MATTERS = {
+    immigration: { name: "Immigration", tip: "Bring any letter or notice you received, with the envelope, and your passport or prior USCIS papers." },
+    family: { name: "Divorce or custody", tip: "Bring your marriage certificate and any court papers already issued." },
+    criminal: { name: "A criminal charge", tip: "Bring the charge paperwork and your next court date. Do not discuss the facts with anyone else." },
+    business: { name: "My business", tip: "Bring the full contract, lease or formation papers, not a photo of one page." },
+    estate: { name: "A will or probate", tip: "Bring the will if there is one, and a list of property and accounts." },
+    injury: { name: "An injury", tip: "Bring the report number, photos and any letter from an insurer. Sign nothing from them first." },
+    tax: { name: "A tax letter", tip: "Bring every page of the IRS or state notice. The date on page one matters." },
+    other: { name: "Not sure", tip: "Bring whatever paper started this. We will know which kind of matter it is." },
+  };
+  function initBooking() {
+    const form = $("[data-book]");
+    if (!form) return;
+    const want = new URLSearchParams(location.search).get("m");
+    if (want && MATTERS[want]) { const r = $(`input[name="matter"][value="${want}"]`, form); if (r) r.checked = true; }
+    const tip = $("[data-tip] span", form);
+    const sync = () => { const m = MATTERS[new FormData(form).get("matter")] || MATTERS.other; if (tip) tip.textContent = m.tip; };
+    form.addEventListener("change", sync); sync();
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const d = new FormData(form);
+      const m = MATTERS[d.get("matter")] || MATTERS.other;
+      const text = ["Consultation request", `Name: ${d.get("name")}`, `Phone: ${d.get("phone")}`, `About: ${m.name}`].join("\n");
+      if (FIRM.email) {
+        location.href = `mailto:${FIRM.email}?subject=${encodeURIComponent(`Consultation request: ${m.name}`)}&body=${encodeURIComponent(text)}`;
+        toast("Opening your email app with the request ready", "envelope-simple");
+        return;
+      }
+      const done = $("[data-book-done]");
+      navigator.clipboard && navigator.clipboard.writeText(text).catch(() => {});
+      if (done) { done.hidden = false; form.hidden = true; scrollToEl(done, -96); }
+    });
   }
 
-  /* ---------------------------------------------------------------- Forms */
-  function initForms() {
-    $$("form[data-intake]").forEach((f) => f.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!f.reportValidity()) return;
-      const d = new FormData(f);
-      const text = [`Name: ${d.get("name")}`, `Phone: ${d.get("phone")}`, `Matter: ${d.get("matter")}`, `Best time to call: ${d.get("time") || "any"}`, "", d.get("message") || ""].join("\n");
-      if (FIRM.email) {
-        location.href = `mailto:${FIRM.email}?subject=${encodeURIComponent(`Consultation request: ${d.get("matter")}`)}&body=${encodeURIComponent(text)}`;
-        toast("Opening your email app with the request ready", "envelope-simple");
-      } else {
-        const done = $("[data-intake-done]");
-        if (done) { done.hidden = false; $("[data-intake-text]", done).textContent = text; f.hidden = true; scrollToEl(done, -96); }
-        navigator.clipboard && navigator.clipboard.writeText(text).catch(() => {});
-      }
-    }));
+  function initAnchors() {
     $$('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {
       const el = a.getAttribute("href").length > 1 && $(a.getAttribute("href"));
       if (!el) return;
@@ -280,8 +259,8 @@
     initReveals();
     initParallax();
     initClock();
-    initPlanner();
-    initForms();
+    initBooking();
+    initAnchors();
     emit();
   }
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", boot) : boot();
