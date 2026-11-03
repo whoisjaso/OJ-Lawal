@@ -22,8 +22,8 @@
     name: "Law Firm of O. J. Lawal & Associates",
     phone: "+17137730600",
     phoneText: "(713) 773-0600",
-    address: "8700 Commerce Park Drive, Suite 202, Houston, TX 77036",
-    maps: "https://maps.google.com/?q=8700+Commerce+Park+Drive+Suite+202+Houston+TX+77036",
+    address: "11711 Bedford Street, Unit 1, Houston, TX 77031",
+    maps: "https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031",
     email: "", // set the firm's intake address here to enable email from the contact form
   };
 

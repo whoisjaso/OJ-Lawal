@@ -9,7 +9,7 @@ Houston-area individuals and families, many of them immigrants, facing immigrati
 ## Facts used (from public listings; confirm with the firm)
 - Firm: Law Firm of O. J. Lawal & Associates (Apple Maps: "Law Office of Oj Lawal & Associates")
 - Attorney: Omotayo J. "O. J." Lawal, licensed by the State Bar of Texas (listing shows 1998), University of Houston Law Center
-- Office: 8700 Commerce Park Drive, Suite 202, Houston, TX 77036 (FindLaw, Martindale). A second address, 11711 Bedford St Unit 1, Houston 77031, appears on the State Bar and Justia listings. Confirm which is current.
+- Office: 11711 Bedford Street, Unit 1, Houston, TX 77031 (State Bar of Texas, Justia), confirmed by the client. FindLaw and Martindale still list 8700 Commerce Park Drive, Suite 202, Houston 77036; those listings should be updated.
 - Phone (713) 773-0600, fax (713) 773-0699. Justia lists (936) 427-6262. Confirm.
 - Hours: Monday to Friday, 9 am to 5 pm (Apple Maps, Yelp)
 - Practice areas: immigration, family, criminal, business, probate (State Bar); estate planning, personal injury, tax (Yelp)
@@ -22,4 +22,4 @@ Testimonials, case results, years in practice, number of cases, staff names, lan
 Patek Philippe grammar from the luxury-site-studio starter: stacked full-bleed hero, light uppercase titles, serif voice, one muted bronze accent, hairline rows, outline pills.
 
 ## Open items for the client
-1. Confirm address and phone (see above). 2. Provide an intake email. 3. Provide a photo of O. J. Lawal and the office (photos now are licensed stock, no people). 4. Official logo if one exists; the emblem is a placeholder monogram. 5. Confirm bar admission year and education before adding them to the attorney page. 6. Choose the domain.
+1. Confirm phone (see above). 2. Provide an intake email. 3. Provide a photo of O. J. Lawal and the office (photos now are licensed stock, no people). 4. Official logo if one exists; the emblem is a placeholder monogram. 5. Confirm bar admission year and education before adding them to the attorney page. 6. Choose the domain.
