@@ -18,7 +18,7 @@ og: slots/band-books-1280.webp
 <section class="section" id="consult" aria-labelledby="consult-title">
   <div class="wrap">
     <div class="plan">
-      <div>
+      <div class="plan__pick">
         <h2 class="title-lg" id="consult-title" style="margin-bottom:18px">Prepare your call</h2>
         <p class="text text-soft" style="margin-bottom:40px">Three choices, and we tell you what to have ready so the first conversation goes further.</p>
         <form data-planner onsubmit="return false">
@@ -47,8 +47,21 @@ og: slots/band-books-1280.webp
             </div>
           </fieldset>
         </form>
-
-        <h2 class="title-lg" style="margin:72px 0 18px">Or send your details</h2>
+      </div>
+      <aside class="plancard" data-plancard aria-live="polite" aria-label="What to have ready">
+        <div class="plancard__body">
+          <p class="plancard__date" data-p-date>Immigration</p>
+          <p class="plancard__time" data-p-time>What to have ready for your first conversation</p>
+          <ul data-p-notes><li><i class="ph ph-folder-simple" aria-hidden="true"></i><span>Any letter or notice you received, with its envelope.</span></li></ul>
+        </div>
+        <div class="plancard__actions">
+          <a class="pill pill--solid" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Call (713) 773-0600</a>
+          <a class="pill" href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">Get directions</a>
+          <a class="pill" data-p-mail href="#">Copy this summary</a>
+        </div>
+      </aside>
+      <div class="plan__more">
+        <h2 class="title-lg" style="margin:0 0 18px">Or send your details</h2>
         <p class="text text-soft" style="margin-bottom:32px">We call you back during office hours. Please do not include confidential details here until we have spoken.</p>
         <form class="form" data-intake novalidate>
           <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"><span class="field__err">Please enter your name.</span></div>
@@ -74,18 +87,6 @@ og: slots/band-books-1280.webp
           <details><summary>Is my information confidential?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>What you tell an attorney in a consultation is protected. Please keep sensitive details out of the website form until we have spoken and confirmed representation in writing.</p></details>
         </div>
       </div>
-      <aside class="plancard" data-plancard aria-live="polite" aria-label="What to have ready">
-        <div class="plancard__body">
-          <p class="plancard__date" data-p-date>Immigration</p>
-          <p class="plancard__time" data-p-time>What to have ready for your first conversation</p>
-          <ul data-p-notes><li><i class="ph ph-folder-simple" aria-hidden="true"></i><span>Any letter or notice you received, with its envelope.</span></li></ul>
-        </div>
-        <div class="plancard__actions">
-          <a class="pill pill--solid" href="tel:+17137730600"><i class="ph ph-phone" aria-hidden="true"></i>Call (713) 773-0600</a>
-          <a class="pill" href="https://maps.google.com/?q=11711+Bedford+St+Unit+1+Houston+TX+77031" target="_blank" rel="noopener">Get directions</a>
-          <a class="pill" data-p-mail href="#">Copy this summary</a>
-        </div>
-      </aside>
     </div>
   </div>
 </section>

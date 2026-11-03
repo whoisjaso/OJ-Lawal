@@ -435,3 +435,136 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   .brand__name { font-size: 11px; letter-spacing: 0.1em; }
 }
 @media (max-width: 600px) { .steps { grid-template-columns: 1fr; } }
+
+/* ======================================================================
+   Phone layer. Rebuilt: single still hero, left-aligned editorial flow,
+   full-bleed images, tighter type and rhythm, nothing hidden under the bar.
+   ====================================================================== */
+@media (max-width: 860px) {
+  :root { --gutter: 22px; }
+  body { font-size: 16.5px; line-height: 1.6; }
+  .text { max-width: none; }
+  .title-xl { font-size: clamp(30px, 8.6vw, 40px); line-height: 1.1; letter-spacing: 0.01em; }
+  .title-lg { font-size: 24px; line-height: 1.2; }
+  .title { font-size: 16px; }
+  .label { font-size: 11px; }
+  .pill { min-height: 44px; padding: 0 20px; font-size: 11.5px; }
+  .pills { gap: 10px; }
+
+  /* Header: emblem and wordmark, nothing else competes */
+  .header { padding: 0 14px; }
+  .brand img, .header.is-solid .brand img { width: 28px; height: 28px; }
+  .brand__name { font-size: 10.5px; letter-spacing: 0.14em; }
+  .brand { gap: 4px; padding-top: 2px; }
+
+  /* Hero: one still, full height above the call bar; the other slides live in the page below */
+  .stack { background: var(--night); }
+  .slide { position: relative; height: calc(100svh - var(--bar-h)); min-height: 600px; }
+  .slide + .slide, .dots { display: none; }
+  .slide__media { transform: none !important; }
+  .slide__shade { display: none; }
+  .slide__media::after { background: linear-gradient(180deg, rgb(20 18 17 / .42) 0%, rgb(20 18 17 / 0) 22%), linear-gradient(0deg, rgb(20 18 17 / .88) 0%, rgb(20 18 17 / .55) 34%, rgb(20 18 17 / 0) 62%); }
+  .slide__copy { left: var(--gutter); right: var(--gutter); bottom: 34px; max-width: none; }
+  .slide__copy .text { font-size: 17px; line-height: 1.5; margin: 14px 0 22px; max-width: 34ch; }
+  .slide__copy .pill { width: 100%; }
+  .slide__live { display: flex; margin-top: 16px; font-size: 12px; }
+
+  /* Inner page heroes */
+  .phero { height: 68svh; min-height: 440px; }
+  .phero .slide__copy .pill { width: auto; }
+
+  /* Rhythm */
+  .section { padding: 60px 0; }
+  .section + .section { padding-top: 52px; }
+  .statement { text-align: left; }
+  .statement .title-lg { margin: 0 0 14px; max-width: none; }
+  .statement .text { margin: 0; }
+  .statement .pills { justify-content: flex-start; }
+
+  /* Editorial spreads: image edge to edge, copy left aligned under it */
+  .feature, .feature--flip { display: block; text-align: left; }
+  .feature + .feature { margin-top: 64px; }
+  .feature__media { margin: 0 calc(-1 * var(--gutter)) 26px; }
+  .feature__media img, .feature__media--wide img { aspect-ratio: 4 / 3; }
+  .feature__copy .title-lg { margin-bottom: 14px; }
+  .feature__copy .text { margin-left: 0; margin-right: 0; }
+  .feature__copy .pills { justify-content: flex-start; margin-top: 22px; }
+  .feature > .map { margin: 0 calc(-1 * var(--gutter)) 26px; aspect-ratio: 4 / 3; }
+  .contacts { margin-top: 16px; gap: 8px; font-size: 16px; }
+
+  /* Concerns: the quote, then the answer, compact */
+  .concerns { margin-top: 28px; }
+  .concern { padding: 24px 0; gap: 10px; }
+  .concern__pain { font-size: 20px; line-height: 1.3; }
+  .concern__answer { font-size: 16px; line-height: 1.55; }
+  .concern__answer b { margin-bottom: 6px; }
+
+  /* Bands */
+  .band { min-height: 0; padding-top: 58vw; }
+  .band__media { inset: 0; }
+  .band__media img { transform: none !important; }
+  .band__media::after { background: linear-gradient(0deg, rgb(20 18 17 / .86) 0%, rgb(20 18 17 / .5) 45%, rgb(20 18 17 / .05) 75%); }
+  .band__copy { padding: 0 var(--gutter) 40px; max-width: none; }
+  .band__copy .text { font-size: 16.5px; margin: 12px 0 20px; }
+  .band__copy .pills .pill { flex: 1 1 auto; }
+
+  /* Lists */
+  .steps { grid-template-columns: 1fr; gap: 0; margin-top: 28px; border-top: 1px solid var(--taupe); }
+  .steps li { border-top: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .steps b { font-size: 16px; margin-bottom: 6px; }
+  .steps p { font-size: 16px; }
+  .paths { margin-top: 28px; }
+  .paths li { padding: 18px 0; }
+  .paths b { font-size: 15.5px; }
+  .paths p { font-size: 16px; }
+  .rows li { padding: 22px 0; gap: 8px; }
+  .facts { margin: 22px 0; }
+  .facts li { padding: 12px 0; font-size: 16px; }
+  .notice { padding: 28px 0; }
+  .notice ul { padding-left: 18px; font-size: 16px; }
+
+  /* Prepare your call */
+  .plan { gap: 36px; }
+  .plan__q { margin-bottom: 22px; }
+  .chip span { min-height: 40px; padding: 0 16px; font-size: 12.5px; }
+  .plancard { padding: 24px 22px; margin: 0 calc(-1 * var(--gutter)); }
+  .plancard__date { font-size: 22px; }
+  .plancard li { font-size: 15px; }
+  .faq summary { padding: 18px 0; font-size: 12px; }
+  .faq details p { font-size: 16px; }
+  .form { gap: 20px; }
+
+  /* Footer */
+  .footer { padding: 56px 0 calc(28px + var(--bar-h)); }
+  .footer__cols { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .footer ul { font-size: 14px; gap: 7px; }
+  .footer__brand { margin-top: 44px; padding-top: 24px; gap: 16px; }
+  .footer__legal { font-size: 12.5px; }
+  .footer__fine { font-size: 12.5px; line-height: 1.55; margin-top: 20px; }
+
+  /* Call bar: a touch taller, phone number visible */
+  :root { --bar-h: 72px; }
+  .mbar { padding: 0 14px calc(env(safe-area-inset-bottom) * .6); gap: 8px; }
+  .mbar__next { font-size: 10.5px; }
+  .mbar__next b { font-size: 12px; }
+  .mbar .pill--solid { min-height: 44px; padding: 0 18px; }
+  .mbar .pill--icon { width: 44px; min-height: 44px; }
+}
+@media (max-width: 600px) {
+  .footer__cols { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .brand__name { font-size: 9.5px; letter-spacing: 0.12em; }
+  .footer__cols { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Prepare-your-call layout: picker and card side by side, the rest below the picker */
+.plan { grid-template-areas: "pick card" "more card"; grid-template-rows: auto 1fr; }
+.plan__pick { grid-area: pick; }
+.plan__more { grid-area: more; margin-top: 56px; }
+.plan > .plancard { grid-area: card; align-self: start; }
+@media (max-width: 860px) {
+  .plan { display: block; }
+  .plan__more { margin-top: 56px; }
+  .plan > .plancard { margin-top: 8px; }
+}
