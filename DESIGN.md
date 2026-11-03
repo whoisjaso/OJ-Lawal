@@ -1,0 +1,4 @@
+# Design notes
+Tokens: white, paper #f6f4f0, ink #23262e, bronze #8a7656 / #6b5a40, hairline #e3dfd7. Type: Jost 300 uppercase titles, Cormorant Garamond body 18.5px. Pills outline/solid/white/glass. Motion: Lenis smooth scroll, stacked hero with scale and shade, clip-path image reveals, slow band parallax, reduce-motion toggle in the footer.
+Components added for the firm: `.concerns` (client's worry in italic quotation, firm's answer beside it), `.paths` (two-column hairline list of matters), `.notice` (scam warning band), `.steps`, `.facts`, office-hours live line (`[data-open]`) in Houston time, "Prepare your call" picker producing a what-to-bring card.
+Build: edit `src/`, run `python3 build.py`, output in `site/`. Image slots in `site/assets/img/slots/` from `slots.json` via `scripts/prep_slots.py`.

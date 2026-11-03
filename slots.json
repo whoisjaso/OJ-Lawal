@@ -1,0 +1,11 @@
+{
+ "hero-flag":    {"src": "band-flag.jpg",    "ratio": "16:9", "focus_y": 0.3, "widths": [1280, 2400]},
+ "hero-tower":   {"src": "hero-tower.jpg",   "ratio": "16:9", "focus_y": 0.4, "widths": [1280, 2400]},
+ "hero-library": {"src": "hero-library.jpg", "ratio": "16:9", "focus_y": 0.5, "widths": [1280, 2400]},
+ "ed-justice":   {"src": "ed-columns.jpg",   "ratio": "4:5",  "focus_x": 0.55, "widths": [800, 1400]},
+ "ed-handshake": {"src": "ed-handshake.jpg", "ratio": "4:5",  "focus_x": 0.5,  "widths": [800, 1400]},
+ "ed-pen":       {"src": "ed-pen.jpg",       "ratio": "4:5",  "focus_x": 0.6,  "widths": [800, 1400]},
+ "ed-family":    {"src": "ed-family.jpg",    "ratio": "4:5",  "focus_x": 0.5,  "widths": [800, 1400]},
+ "band-signing": {"src": "hero-desk.jpg",    "ratio": "2:1",  "focus_y": 0.5, "widths": [1280, 2400]},
+ "band-books":   {"src": "band-gavel.jpg",   "ratio": "2:1",  "focus_y": 0.5, "widths": [1280, 2400]}
+}
